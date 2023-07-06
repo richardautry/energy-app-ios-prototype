@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    // TODO: Get and display current battery level
+    // UIDevice.current.isBatteryMonitoringEnabled = true
+    // let level = UIDevice.current.batteryLevel
+    let level = UIDevice.current.batteryLevel
+    
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("\(level)")
         }
         .padding()
     }
