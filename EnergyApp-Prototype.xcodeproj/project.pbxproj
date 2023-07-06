@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */; };
+		793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AF2A56CF5D0068DFFC /* ContentView.swift */; };
+		793483B22A56CF620068DFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793483B12A56CF620068DFFC /* Assets.xcassets */; };
+		793483B52A56CF620068DFFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793483B42A56CF620068DFFC /* Preview Assets.xcassets */; };
+		793483BF2A56CF630068DFFC /* EnergyApp_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483BE2A56CF630068DFFC /* EnergyApp_PrototypeTests.swift */; };
+		793483C92A56CF630068DFFC /* EnergyApp_PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483C82A56CF630068DFFC /* EnergyApp_PrototypeUITests.swift */; };
+		793483CB2A56CF630068DFFC /* EnergyApp_PrototypeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483CA2A56CF630068DFFC /* EnergyApp_PrototypeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		793483BB2A56CF630068DFFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 793483A22A56CF5D0068DFFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 793483A92A56CF5D0068DFFC;
+			remoteInfo = "EnergyApp-Prototype";
+		};
+		793483C52A56CF630068DFFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 793483A22A56CF5D0068DFFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 793483A92A56CF5D0068DFFC;
+			remoteInfo = "EnergyApp-Prototype";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnergyApp-Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeApp.swift; sourceTree = "<group>"; };
+		793483AF2A56CF5D0068DFFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		793483B12A56CF620068DFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		793483B42A56CF620068DFFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		793483BA2A56CF620068DFFC /* EnergyApp-PrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EnergyApp-PrototypeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		793483BE2A56CF630068DFFC /* EnergyApp_PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeTests.swift; sourceTree = "<group>"; };
+		793483C42A56CF630068DFFC /* EnergyApp-PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EnergyApp-PrototypeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		793483C82A56CF630068DFFC /* EnergyApp_PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeUITests.swift; sourceTree = "<group>"; };
+		793483CA2A56CF630068DFFC /* EnergyApp_PrototypeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		793483A72A56CF5D0068DFFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483B72A56CF620068DFFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483C12A56CF630068DFFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		793483A12A56CF5D0068DFFC = {
+			isa = PBXGroup;
+			children = (
+				793483AC2A56CF5D0068DFFC /* EnergyApp-Prototype */,
+				793483BD2A56CF630068DFFC /* EnergyApp-PrototypeTests */,
+				793483C72A56CF630068DFFC /* EnergyApp-PrototypeUITests */,
+				793483AB2A56CF5D0068DFFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		793483AB2A56CF5D0068DFFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */,
+				793483BA2A56CF620068DFFC /* EnergyApp-PrototypeTests.xctest */,
+				793483C42A56CF630068DFFC /* EnergyApp-PrototypeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		793483AC2A56CF5D0068DFFC /* EnergyApp-Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */,
+				793483AF2A56CF5D0068DFFC /* ContentView.swift */,
+				793483B12A56CF620068DFFC /* Assets.xcassets */,
+				793483B32A56CF620068DFFC /* Preview Content */,
+			);
+			path = "EnergyApp-Prototype";
+			sourceTree = "<group>";
+		};
+		793483B32A56CF620068DFFC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				793483B42A56CF620068DFFC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		793483BD2A56CF630068DFFC /* EnergyApp-PrototypeTests */ = {
+			isa = PBXGroup;
+			children = (
+				793483BE2A56CF630068DFFC /* EnergyApp_PrototypeTests.swift */,
+			);
+			path = "EnergyApp-PrototypeTests";
+			sourceTree = "<group>";
+		};
+		793483C72A56CF630068DFFC /* EnergyApp-PrototypeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				793483C82A56CF630068DFFC /* EnergyApp_PrototypeUITests.swift */,
+				793483CA2A56CF630068DFFC /* EnergyApp_PrototypeUITestsLaunchTests.swift */,
+			);
+			path = "EnergyApp-PrototypeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		793483A92A56CF5D0068DFFC /* EnergyApp-Prototype */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793483CE2A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-Prototype" */;
+			buildPhases = (
+				793483A62A56CF5D0068DFFC /* Sources */,
+				793483A72A56CF5D0068DFFC /* Frameworks */,
+				793483A82A56CF5D0068DFFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EnergyApp-Prototype";
+			productName = "EnergyApp-Prototype";
+			productReference = 793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */;
+			productType = "com.apple.product-type.application";
+		};
+		793483B92A56CF620068DFFC /* EnergyApp-PrototypeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793483D12A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-PrototypeTests" */;
+			buildPhases = (
+				793483B62A56CF620068DFFC /* Sources */,
+				793483B72A56CF620068DFFC /* Frameworks */,
+				793483B82A56CF620068DFFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				793483BC2A56CF630068DFFC /* PBXTargetDependency */,
+			);
+			name = "EnergyApp-PrototypeTests";
+			productName = "EnergyApp-PrototypeTests";
+			productReference = 793483BA2A56CF620068DFFC /* EnergyApp-PrototypeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		793483C32A56CF630068DFFC /* EnergyApp-PrototypeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 793483D42A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-PrototypeUITests" */;
+			buildPhases = (
+				793483C02A56CF630068DFFC /* Sources */,
+				793483C12A56CF630068DFFC /* Frameworks */,
+				793483C22A56CF630068DFFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				793483C62A56CF630068DFFC /* PBXTargetDependency */,
+			);
+			name = "EnergyApp-PrototypeUITests";
+			productName = "EnergyApp-PrototypeUITests";
+			productReference = 793483C42A56CF630068DFFC /* EnergyApp-PrototypeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		793483A22A56CF5D0068DFFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					793483A92A56CF5D0068DFFC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					793483B92A56CF620068DFFC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 793483A92A56CF5D0068DFFC;
+					};
+					793483C32A56CF630068DFFC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 793483A92A56CF5D0068DFFC;
+					};
+				};
+			};
+			buildConfigurationList = 793483A52A56CF5D0068DFFC /* Build configuration list for PBXProject "EnergyApp-Prototype" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 793483A12A56CF5D0068DFFC;
+			productRefGroup = 793483AB2A56CF5D0068DFFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				793483A92A56CF5D0068DFFC /* EnergyApp-Prototype */,
+				793483B92A56CF620068DFFC /* EnergyApp-PrototypeTests */,
+				793483C32A56CF630068DFFC /* EnergyApp-PrototypeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		793483A82A56CF5D0068DFFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793483B52A56CF620068DFFC /* Preview Assets.xcassets in Resources */,
+				793483B22A56CF620068DFFC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483B82A56CF620068DFFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483C22A56CF630068DFFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		793483A62A56CF5D0068DFFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
+				793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483B62A56CF620068DFFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793483BF2A56CF630068DFFC /* EnergyApp_PrototypeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		793483C02A56CF630068DFFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				793483C92A56CF630068DFFC /* EnergyApp_PrototypeUITests.swift in Sources */,
+				793483CB2A56CF630068DFFC /* EnergyApp_PrototypeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		793483BC2A56CF630068DFFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 793483A92A56CF5D0068DFFC /* EnergyApp-Prototype */;
+			targetProxy = 793483BB2A56CF630068DFFC /* PBXContainerItemProxy */;
+		};
+		793483C62A56CF630068DFFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 793483A92A56CF5D0068DFFC /* EnergyApp-Prototype */;
+			targetProxy = 793483C52A56CF630068DFFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		793483CC2A56CF630068DFFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		793483CD2A56CF630068DFFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		793483CF2A56CF630068DFFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnergyApp-Prototype/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-Prototype";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		793483D02A56CF630068DFFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnergyApp-Prototype/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-Prototype";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		793483D22A56CF630068DFFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-PrototypeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnergyApp-Prototype.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnergyApp-Prototype";
+			};
+			name = Debug;
+		};
+		793483D32A56CF630068DFFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-PrototypeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnergyApp-Prototype.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnergyApp-Prototype";
+			};
+			name = Release;
+		};
+		793483D52A56CF630068DFFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-PrototypeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EnergyApp-Prototype";
+			};
+			name = Debug;
+		};
+		793483D62A56CF630068DFFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-PrototypeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EnergyApp-Prototype";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		793483A52A56CF5D0068DFFC /* Build configuration list for PBXProject "EnergyApp-Prototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793483CC2A56CF630068DFFC /* Debug */,
+				793483CD2A56CF630068DFFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793483CE2A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-Prototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793483CF2A56CF630068DFFC /* Debug */,
+				793483D02A56CF630068DFFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793483D12A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-PrototypeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793483D22A56CF630068DFFC /* Debug */,
+				793483D32A56CF630068DFFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		793483D42A56CF630068DFFC /* Build configuration list for PBXNativeTarget "EnergyApp-PrototypeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				793483D52A56CF630068DFFC /* Debug */,
+				793483D62A56CF630068DFFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 793483A22A56CF5D0068DFFC /* Project object */;
+}
