@@ -33,6 +33,8 @@ struct ContentView: View {
     }
     
     func startLoad(_ completion: @escaping (Data) -> Void) {
+        // TODO: Build URL from params list
+        // TODO: Adjust dates to build from current date
         let api_key = API.eiaAPIKey
 //        let params = [
 //            "api_key": API.eiaAPIKey
