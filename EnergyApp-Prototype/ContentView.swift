@@ -6,20 +6,37 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     // TODO: Get and display current battery level
     // UIDevice.current.isBatteryMonitoringEnabled = true
     // let level = UIDevice.current.batteryLevel
     let level = UIDevice.current.batteryLevel
+    let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
+            Text("\(rustGreetings.sayHello(to: "world"))")
             dataView()
+        }
+        .onAppear {
+//            var len: UInt32 = 0
+//            let arrayPtr = provide_array_of_ints(&len)
+//            print("Length: \(len)")
+//            let array = Array(UnsafeBufferPointer(start: arrayPtr, count: Int(len)))
+//            free_array(arrayPtr)
+//            print("Array: \(array)")
+            
+            var len: UInt32 = 0
+            let tplinkDiscoveryPtr = tplinker_discovery(&len)
+            print("Length: \(len)")
+            let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
+            for thing in array {
+                print("\(String(cString: thing!))")
+            }
+            tplinker_vec_destroy(tplinkDiscoveryPtr)
         }
     }
     
@@ -27,8 +44,13 @@ struct ContentView: View {
         self.startLoad { (data)  in
             eiaData = convertDataToEIAData(data: data)
         }
-        return List(eiaData) { dataItem in
-            Text("\(dataItem.value)")
+        return Chart {
+            ForEach(eiaData) { dataItem in
+                BarMark(
+                    x: .value("Period", dataItem.period),
+                    y: .value("Value", dataItem.value)
+                )
+            }
         }
     }
     
@@ -36,16 +58,13 @@ struct ContentView: View {
         // TODO: Build URL from params list
         // TODO: Adjust dates to build from current date
         let api_key = API.eiaAPIKey
-//        let params = [
-//            "api_key": API.eiaAPIKey
-//        ]
-        // let url = URL(string: "https://api.eia.gov/v2/electricity/rto/region-data/data/")!
-        let url = URL(string: "https://api.eia.gov/v2/electricity/rto/region-data/data/?api_key=\(api_key)&frequency=local-hourly&data[0]=value&facets[respondent][]=MIDA&start=2023-06-24T00:00:00-04:00&end=2023-07-01T00:00:00-04:00"
+        let start_date = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+        let start_date_string = getEIARequestDateFormatter().string(from: start_date)
+        let end_date = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        let end_date_string = getEIARequestDateFormatter().string(from: end_date)
+
+        let url = URL(string: "https://api.eia.gov/v2/electricity/rto/region-data/data/?api_key=\(api_key)&frequency=local-hourly&data[0]=value&facets[respondent][]=MIDA&start=\(start_date_string)&end=\(end_date_string)"
         )!
-    //    var request = URLRequest(url: url)
-    //    request.httpMethod = "GET"
-    //    request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-    //    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -56,7 +75,7 @@ struct ContentView: View {
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 // self.handleServerError(response)
-                print("Wrong status code")  // TODO: Print status code
+                print("Wrong status code: \(String(describing: response))")  // TODO: Print status code
                 return
             }
             if let mimeType = httpResponse.mimeType, mimeType == "application/json",
@@ -77,9 +96,12 @@ struct ContentView: View {
             for data_item in all_data {
                 converted_data.append(EIAData(json_data: data_item))
             }
+            // TODO: Compare to current day
+            // Right now this is showing previous demand. Will need to get actual forecast directly from PJM for real-time data
             return_data = converted_data.filter {
                 $0.type == "D" &&
-                $0.period.starts(with: "2023-06-30")
+                $0.period >= Calendar.current.date(byAdding: .day, value: -2, to: Date())! &&
+                $0.period <= Calendar.current.date(byAdding: .hour, value: -12, to: Date())!
             }
         } catch {
             print("\(error)")
@@ -93,23 +115,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-// TODO: Convert json to EIAData
-//do {
-//    let json = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, AnyObject>
-//    let response = json["response"] as! Dictionary<String, AnyObject>
-//    let all_data = response["data"] as! Array<Dictionary<String, AnyObject>>
-//    var converted_data: [EIAData] = []
-//    for data_item in all_data {
-//        converted_data.append(EIAData(json_data: data_item))
-//    }
-//    let demand_data = converted_data.filter {
-//        $0.type == "D" &&
-//        $0.period.starts(with: "2023-06-30")
-//    }
-//} catch {
-//    print("Error")
-//}
-
-

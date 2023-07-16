@@ -18,6 +18,9 @@
 		79467C3C2A5CE26B00CBCF1E /* DemandDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79467C3B2A5CE26B00CBCF1E /* DemandDataView.swift */; };
 		79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79467C3F2A5EBF7E00CBCF1E /* Configuration.swift */; };
 		79467C422A5F794300CBCF1E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79467C412A5F794300CBCF1E /* .gitignore */; };
+		79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */; };
+		79467C4F2A62F5EA00CBCF1E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C452A62ED1200CBCF1E /* libresolv.tbd */; };
+		797429D52A64689F00EB7D40 /* libgreetings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C442A62ECF000CBCF1E /* libgreetings.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,11 @@
 		79467C3E2A5EBF0D00CBCF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79467C3F2A5EBF7E00CBCF1E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		79467C412A5F794300CBCF1E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		79467C442A62ECF000CBCF1E /* libgreetings.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgreetings.a; path = "../tplink-finder/target/universal/release/libgreetings.a"; sourceTree = "<group>"; };
+		79467C452A62ED1200CBCF1E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		79467C472A62ED8300CBCF1E /* Greetings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Greetings-Bridging-Header.h"; sourceTree = "<group>"; };
+		79467C4B2A62F4BD00CBCF1E /* greetings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = greetings.h; path = "../../tplink-finder/src/greetings.h"; sourceTree = "<group>"; };
+		79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustGreetings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797429D52A64689F00EB7D40 /* libgreetings.a in Frameworks */,
+				79467C4F2A62F5EA00CBCF1E /* libresolv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,7 @@
 				793483BD2A56CF630068DFFC /* EnergyApp-PrototypeTests */,
 				793483C72A56CF630068DFFC /* EnergyApp-PrototypeUITests */,
 				793483AB2A56CF5D0068DFFC /* Products */,
+				79467C432A62ECEF00CBCF1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +115,8 @@
 		793483AC2A56CF5D0068DFFC /* EnergyApp-Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				79467C472A62ED8300CBCF1E /* Greetings-Bridging-Header.h */,
+				79467C4B2A62F4BD00CBCF1E /* greetings.h */,
 				79467C3E2A5EBF0D00CBCF1E /* Info.plist */,
 				79467C3A2A5CE25A00CBCF1E /* Views */,
 				793483DB2A5C15EB0068DFFC /* Models */,
@@ -114,6 +127,7 @@
 				79467C3D2A5EBC1D00CBCF1E /* Config.xcconfig */,
 				79467C3F2A5EBF7E00CBCF1E /* Configuration.swift */,
 				79467C412A5F794300CBCF1E /* .gitignore */,
+				79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */,
 			);
 			path = "EnergyApp-Prototype";
 			sourceTree = "<group>";
@@ -157,6 +171,15 @@
 				79467C3B2A5CE26B00CBCF1E /* DemandDataView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		79467C432A62ECEF00CBCF1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79467C452A62ED1200CBCF1E /* libresolv.tbd */,
+				79467C442A62ECF000CBCF1E /* libgreetings.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
 				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,
 				79467C3C2A5CE26B00CBCF1E /* DemandDataView.swift in Sources */,
@@ -467,10 +491,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../tplink-finder/target/universal/release";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-Prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/EnergyApp-Prototype/Greetings-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,10 +522,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../tplink-finder/target/universal/release";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.EnergyApp-Prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/EnergyApp-Prototype/Greetings-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
