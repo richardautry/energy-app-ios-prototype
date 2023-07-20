@@ -20,7 +20,10 @@
 		79467C422A5F794300CBCF1E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79467C412A5F794300CBCF1E /* .gitignore */; };
 		79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */; };
 		79467C4F2A62F5EA00CBCF1E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C452A62ED1200CBCF1E /* libresolv.tbd */; };
-		797429D52A64689F00EB7D40 /* libgreetings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C442A62ECF000CBCF1E /* libgreetings.a */; };
+		797429D62A68B6E800EB7D40 /* libgreetings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C442A62ECF000CBCF1E /* libgreetings.a */; };
+		797429D92A69465B00EB7D40 /* RustObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429D82A69465B00EB7D40 /* RustObject.swift */; };
+		797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DA2A69470100EB7D40 /* DeviceData.swift */; };
+		797429DD2A69851700EB7D40 /* DeviceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DC2A69851700EB7D40 /* DeviceDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		79467C472A62ED8300CBCF1E /* Greetings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Greetings-Bridging-Header.h"; sourceTree = "<group>"; };
 		79467C4B2A62F4BD00CBCF1E /* greetings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = greetings.h; path = "../../tplink-finder/src/greetings.h"; sourceTree = "<group>"; };
 		79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustGreetings.swift; sourceTree = "<group>"; };
+		797429D82A69465B00EB7D40 /* RustObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustObject.swift; sourceTree = "<group>"; };
+		797429DA2A69470100EB7D40 /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
+		797429DC2A69851700EB7D40 /* DeviceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797429D52A64689F00EB7D40 /* libgreetings.a in Frameworks */,
+				797429D62A68B6E800EB7D40 /* libgreetings.a in Frameworks */,
 				79467C4F2A62F5EA00CBCF1E /* libresolv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +121,7 @@
 		793483AC2A56CF5D0068DFFC /* EnergyApp-Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				797429D72A69464800EB7D40 /* Rust */,
 				79467C472A62ED8300CBCF1E /* Greetings-Bridging-Header.h */,
 				79467C4B2A62F4BD00CBCF1E /* greetings.h */,
 				79467C3E2A5EBF0D00CBCF1E /* Info.plist */,
@@ -169,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				79467C3B2A5CE26B00CBCF1E /* DemandDataView.swift */,
+				797429DC2A69851700EB7D40 /* DeviceDataView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +188,15 @@
 				79467C442A62ECF000CBCF1E /* libgreetings.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		797429D72A69464800EB7D40 /* Rust */ = {
+			isa = PBXGroup;
+			children = (
+				797429D82A69465B00EB7D40 /* RustObject.swift */,
+				797429DA2A69470100EB7D40 /* DeviceData.swift */,
+			);
+			path = Rust;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,11 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
+				797429DD2A69851700EB7D40 /* DeviceDataView.swift in Sources */,
+				797429D92A69465B00EB7D40 /* RustObject.swift in Sources */,
 				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,
 				79467C3C2A5CE26B00CBCF1E /* DemandDataView.swift in Sources */,
 				793483DD2A5C16000068DFFC /* EIAData.swift in Sources */,
 				793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */,
+				797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EnergyApp-Prototype/Preview Content\"";
+				DEVELOPMENT_TEAM = LNWBK4K6QX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EnergyApp-Prototype/Info.plist";
@@ -510,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EnergyApp-Prototype/Preview Content\"";
+				DEVELOPMENT_TEAM = LNWBK4K6QX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EnergyApp-Prototype/Info.plist";

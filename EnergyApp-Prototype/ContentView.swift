@@ -15,29 +15,35 @@ struct ContentView: View {
     let level = UIDevice.current.batteryLevel
     let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
+    @State private var allDeviceData: [DeviceData] = []
     
     var body: some View {
         VStack {
             Text("\(rustGreetings.sayHello(to: "world"))")
-            dataView()
+            // dataView()
+            getDeviceDataView()
         }
         .onAppear {
-//            var len: UInt32 = 0
-//            let arrayPtr = provide_array_of_ints(&len)
-//            print("Length: \(len)")
-//            let array = Array(UnsafeBufferPointer(start: arrayPtr, count: Int(len)))
-//            free_array(arrayPtr)
-//            print("Array: \(array)")
-            
-            var len: UInt32 = 0
-            let tplinkDiscoveryPtr = tplinker_discovery(&len)
-            print("Length: \(len)")
-            let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
-            for thing in array {
-                print("\(String(cString: thing!))")
+                var len: UInt32 = 0
+                let tplinkDiscoveryPtr = tplinker_discovery(&len)
+                print("Length: \(len)")
+                let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
+                for devicePtr in array {
+                    let deviceData = DeviceData(raw: devicePtr)
+                    print("\(deviceData.alias)")
+                    allDeviceData.append(deviceData)
             }
-            tplinker_vec_destroy(tplinkDiscoveryPtr)
         }
+    }
+    
+    func getDeviceDataView() -> some View {
+        // TODO: Create cards with device data
+        return VStack {
+            List(allDeviceData) { deviceData in
+                DeviceDataView(deviceData: deviceData)
+            }
+        }
+        
     }
     
     func dataView() -> some View {
