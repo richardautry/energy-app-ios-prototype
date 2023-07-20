@@ -23,7 +23,8 @@
 		797429D62A68B6E800EB7D40 /* libgreetings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79467C442A62ECF000CBCF1E /* libgreetings.a */; };
 		797429D92A69465B00EB7D40 /* RustObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429D82A69465B00EB7D40 /* RustObject.swift */; };
 		797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DA2A69470100EB7D40 /* DeviceData.swift */; };
-		797429DD2A69851700EB7D40 /* DeviceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DC2A69851700EB7D40 /* DeviceDataView.swift */; };
+		797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */; };
+		797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DE2A69BCD600EB7D40 /* FullDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,8 @@
 		79467C4C2A62F55D00CBCF1E /* RustGreetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustGreetings.swift; sourceTree = "<group>"; };
 		797429D82A69465B00EB7D40 /* RustObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustObject.swift; sourceTree = "<group>"; };
 		797429DA2A69470100EB7D40 /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
-		797429DC2A69851700EB7D40 /* DeviceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataView.swift; sourceTree = "<group>"; };
+		797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDeviceDataView.swift; sourceTree = "<group>"; };
+		797429DE2A69BCD600EB7D40 /* FullDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				79467C3B2A5CE26B00CBCF1E /* DemandDataView.swift */,
-				797429DC2A69851700EB7D40 /* DeviceDataView.swift */,
+				797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 			children = (
 				797429D82A69465B00EB7D40 /* RustObject.swift */,
 				797429DA2A69470100EB7D40 /* DeviceData.swift */,
+				797429DE2A69BCD600EB7D40 /* FullDevice.swift */,
 			);
 			path = Rust;
 			sourceTree = "<group>";
@@ -331,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
-				797429DD2A69851700EB7D40 /* DeviceDataView.swift in Sources */,
+				797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */,
 				797429D92A69465B00EB7D40 /* RustObject.swift in Sources */,
 				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,
@@ -339,6 +342,7 @@
 				793483DD2A5C16000068DFFC /* EIAData.swift in Sources */,
 				793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */,
 				797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */,
+				797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

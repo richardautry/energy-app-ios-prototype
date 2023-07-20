@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct DeviceDataView: View {
-    var deviceData: DeviceData
+    var fullDevice: FullDevice
     var body: some View {
         //Text("\(deviceData.alias)")
         VStack {
-            Text("\(deviceData.alias)")
+            Text("\(fullDevice.alias)")
             Spacer()
             HStack {
-                Label("Something", systemImage: "bolt.fill")
+                Label("\(fullDevice.addr)", systemImage: "bolt.fill")
             }
         }
     }

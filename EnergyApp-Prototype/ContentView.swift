@@ -16,6 +16,7 @@ struct ContentView: View {
     let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
     @State private var allDeviceData: [DeviceData] = []
+    @State private var allFullDevices: [FullDevice] = []
     
     var body: some View {
         VStack {
@@ -24,14 +25,23 @@ struct ContentView: View {
             getDeviceDataView()
         }
         .onAppear {
-                var len: UInt32 = 0
-                let tplinkDiscoveryPtr = tplinker_discovery(&len)
-                print("Length: \(len)")
-                let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
-                for devicePtr in array {
-                    let deviceData = DeviceData(raw: devicePtr)
-                    print("\(deviceData.alias)")
-                    allDeviceData.append(deviceData)
+            var len: UInt32 = 0
+            let tplinkDiscoveryPtr = tplinker_discovery(&len)
+            print("Length: \(len)")
+            let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
+            for deviceDataPtr in array {
+                let deviceData = DeviceData(raw: deviceDataPtr)
+                print("\(deviceData.alias)")
+                allDeviceData.append(deviceData)
+            }
+            len = 0
+            let tplinkerDeviceDiscoveryPtr = tplinker_device_discovery(&len)
+            print("Full Devices Length: \(len)")
+            let fullDevicePtrArray = Array(UnsafeBufferPointer(start: tplinkerDeviceDiscoveryPtr, count: Int(len)))
+            for fullDevicePtr in fullDevicePtrArray {
+                let fullDevice = FullDevice(raw: fullDevicePtr)
+                print("\(fullDevice.alias)")
+                allFullDevices.append(fullDevice)
             }
         }
     }
@@ -39,8 +49,8 @@ struct ContentView: View {
     func getDeviceDataView() -> some View {
         // TODO: Create cards with device data
         return VStack {
-            List(allDeviceData) { deviceData in
-                DeviceDataView(deviceData: deviceData)
+            List(allFullDevices) { fullDevice in
+                DeviceDataView(fullDevice: fullDevice)
             }
         }
         
