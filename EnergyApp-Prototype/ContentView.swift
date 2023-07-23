@@ -15,7 +15,6 @@ struct ContentView: View {
     let level = UIDevice.current.batteryLevel
     let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
-    @State private var allDeviceData: [DeviceData] = []
     @State private var allFullDevices: [FullDevice] = []
     
     var body: some View {
@@ -25,32 +24,32 @@ struct ContentView: View {
             getDeviceDataView()
         }
         .onAppear {
-            var len: UInt32 = 0
-            let tplinkDiscoveryPtr = tplinker_discovery(&len)
-            print("Length: \(len)")
-            let array = Array(UnsafeBufferPointer(start: tplinkDiscoveryPtr, count: Int(len)))
-            for deviceDataPtr in array {
-                let deviceData = DeviceData(raw: deviceDataPtr)
-                print("\(deviceData.alias)")
-                allDeviceData.append(deviceData)
-            }
-            len = 0
-            let tplinkerDeviceDiscoveryPtr = tplinker_device_discovery(&len)
-            print("Full Devices Length: \(len)")
-            let fullDevicePtrArray = Array(UnsafeBufferPointer(start: tplinkerDeviceDiscoveryPtr, count: Int(len)))
-            for fullDevicePtr in fullDevicePtrArray {
-                let fullDevice = FullDevice(raw: fullDevicePtr)
-                print("\(fullDevice.alias)")
-                allFullDevices.append(fullDevice)
-            }
+            getFullDevices()
+        }
+    }
+    
+    func getFullDevices() -> Void {
+        var len: UInt32 = 0
+        len = 0
+        let tplinkerDeviceDiscoveryPtr = tplinker_device_discovery(&len)
+        print("Full Devices Length: \(len)")
+        let fullDevicePtrArray = Array(UnsafeBufferPointer(start: tplinkerDeviceDiscoveryPtr, count: Int(len)))
+        allFullDevices = []
+        for fullDevicePtr in fullDevicePtrArray {
+            let fullDevice = FullDevice(raw: fullDevicePtr)
+            print("\(fullDevice.alias)")
+            allFullDevices.append(fullDevice)
         }
     }
     
     func getDeviceDataView() -> some View {
-        // TODO: Create cards with device data
         return VStack {
             List(allFullDevices) { fullDevice in
-                DeviceDataView(fullDevice: fullDevice)
+                FullDeviceDataView(fullDevice: fullDevice)
+                    .padding()
+            }
+            .refreshable {
+                getFullDevices()
             }
         }
         

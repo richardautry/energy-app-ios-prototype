@@ -31,4 +31,18 @@ final class FullDevice: RustObject {
             return String(cString: full_device_get_addr(raw))
         }
     }
+    
+    var is_on: Bool {
+        get {
+            return full_device_is_on(raw)
+        }
+    }
+    
+    func switchOff() -> Bool {
+        return full_device_switch_off(raw)
+    }
+    
+    func switchOn() -> Bool {
+        return full_device_switch_on(raw)
+    }
 }
