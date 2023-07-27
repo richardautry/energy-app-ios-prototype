@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FullDevice: RustObject {
+class FullDevice: RustObject {
     let id: UUID
     var raw: OpaquePointer
     
@@ -44,5 +44,35 @@ final class FullDevice: RustObject {
     
     func switchOn() -> Bool {
         return full_device_switch_on(raw)
+    }
+}
+
+class FullDeviceMock: FullDevice {
+    var prevIsOn: Bool = false
+    
+    override var alias: String {
+        get {
+            return "MockAlias"
+        }
+    }
+    override var addr: String {
+        get {
+            "192.168.1.251:9999"
+        }
+    }
+    override var is_on: Bool {
+        get {
+            if prevIsOn == true {
+                return false
+            } else {
+                return true
+            }
+        }
+    }
+    override func switchOff() -> Bool {
+        return true
+    }
+    override func switchOn() -> Bool {
+        return true
     }
 }

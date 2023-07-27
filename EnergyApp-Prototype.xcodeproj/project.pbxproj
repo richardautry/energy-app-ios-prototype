@@ -25,6 +25,7 @@
 		797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DA2A69470100EB7D40 /* DeviceData.swift */; };
 		797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */; };
 		797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DE2A69BCD600EB7D40 /* FullDevice.swift */; };
+		797429E12A7281DC00EB7D40 /* FullDeviceAutomationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429E02A7281DC00EB7D40 /* FullDeviceAutomationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		797429DA2A69470100EB7D40 /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDeviceDataView.swift; sourceTree = "<group>"; };
 		797429DE2A69BCD600EB7D40 /* FullDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDevice.swift; sourceTree = "<group>"; };
+		797429E02A7281DC00EB7D40 /* FullDeviceAutomationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDeviceAutomationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			children = (
 				79467C3B2A5CE26B00CBCF1E /* DemandDataView.swift */,
 				797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */,
+				797429E02A7281DC00EB7D40 /* FullDeviceAutomationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797429E12A7281DC00EB7D40 /* FullDeviceAutomationsView.swift in Sources */,
 				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
 				797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */,
 				797429D92A69465B00EB7D40 /* RustObject.swift in Sources */,
