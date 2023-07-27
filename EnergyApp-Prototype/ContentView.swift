@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(rustGreetings.sayHello(to: "world"))")
+            Text("SmartEn")
             // dataView()
             getDeviceDataView()
         }
@@ -44,7 +44,7 @@ struct ContentView: View {
     
     func getDeviceDataView() -> some View {
         return VStack {
-            List(allFullDevices) { fullDevice in
+            List($allFullDevices) { fullDevice in
                 FullDeviceDataView(fullDevice: fullDevice)
                     .padding()
             }

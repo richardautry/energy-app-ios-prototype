@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct FullDeviceDataView: View {
-    var fullDevice: FullDevice
+    @Binding var fullDevice: FullDevice
+    @State private var isOn: Bool = false
     var body: some View {
         VStack {
             Text("\(fullDevice.alias)")
@@ -16,13 +17,18 @@ struct FullDeviceDataView: View {
             HStack {
                 Label("\(fullDevice.addr)", systemImage: "bolt.fill")
                 Button(action: {
-                    if fullDevice.is_on {
-                        fullDevice.switchOff()
+                    var result: Bool = false
+                    if isOn {
+                        // TODO: Need to perform error handling here
+                        result = fullDevice.switchOff()
                     } else {
-                        fullDevice.switchOn()
+                        result = fullDevice.switchOn()
+                    }
+                    if result {
+                        isOn = fullDevice.is_on
                     }
                 }) {
-                    if fullDevice.is_on {
+                    if isOn {
                         Image(systemName: "minus")
                     } else {
                         Image(systemName: "plus")
@@ -30,7 +36,10 @@ struct FullDeviceDataView: View {
                 }
             }
             Spacer()
-            Text("On: \(String(fullDevice.is_on))")
+            Text("On: \(String(isOn))")
+        }
+        .onAppear {
+            isOn = fullDevice.is_on
         }
     }
 }
