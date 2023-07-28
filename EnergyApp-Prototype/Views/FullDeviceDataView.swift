@@ -11,11 +11,13 @@ struct FullDeviceDataView: View {
     @Binding var fullDevice: FullDevice
     @State private var isOn: Bool = false
     var body: some View {
-        VStack {
-            Text("\(fullDevice.alias)")
+        VStack(alignment: .leading) {
+            Text(fullDevice.alias)
+                .font(.headline)
             Spacer()
             HStack {
-                Label("\(fullDevice.addr)", systemImage: "bolt.fill")
+                Label("\(fullDevice.addr)", systemImage: getBoltImage())
+                Spacer()
                 Button(action: {
                     var result: Bool = false
                     if isOn {
@@ -29,23 +31,32 @@ struct FullDeviceDataView: View {
                     }
                 }) {
                     if isOn {
-                        Image(systemName: "minus")
+                        // Image(systemName: "minus")
+                        Text("On")
                     } else {
-                        Image(systemName: "plus")
+                        Text("Off")
                     }
                 }
             }
-            Spacer()
-            Text("On: \(String(isOn))")
         }
+        .padding()
         .onAppear {
             isOn = fullDevice.is_on
         }
     }
+    
+    func getBoltImage() -> String {
+        if isOn {
+            return "bolt.fill"
+        } else {
+            return "bolt"
+        }
+    }
 }
 
-//struct DeviceDataView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeviceDataView(deviceData: DeviceData.sampleData[0])
-//    }
-//}
+struct DeviceDataView_Previews: PreviewProvider {
+    static var previews: some View {
+        FullDeviceDataView(fullDevice: .constant(FullDeviceMock.sampleData[0]))
+    }
+}
+

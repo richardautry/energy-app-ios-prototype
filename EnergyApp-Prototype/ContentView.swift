@@ -15,7 +15,7 @@ struct ContentView: View {
     let level = UIDevice.current.batteryLevel
     let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
-    @State private var allFullDevices: [FullDevice] = []
+    @State var allFullDevices: [FullDevice] = []
     
     var body: some View {
         VStack {

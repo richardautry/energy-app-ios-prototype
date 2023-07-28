@@ -76,3 +76,10 @@ class FullDeviceMock: FullDevice {
         return true
     }
 }
+
+extension FullDeviceMock {
+    static let sampleData: [FullDeviceMock] =
+    [
+        FullDeviceMock(raw: OpaquePointer(bitPattern: 1)!)
+    ]
+}
