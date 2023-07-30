@@ -38,6 +38,8 @@ struct FullDeviceDataView: View {
                     }
                 }
             }
+            Spacer()
+            FullDeviceAutomationsView()
         }
         .padding()
         .onAppear {

@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct FullDeviceAutomationsView: View {
+    @State private var someText: String = "BEFORE"
     var body: some View {
         VStack(alignment: .leading) {
             Text("Full Device Automations")
-            Text("Turn Off Timer")
-            Text("Energy Savings")
+            Spacer()
+            HStack {
+                Label("Timer", systemImage: "clock")
+                Spacer()
+                Button(action: {
+                    Task {
+                        await sleepAsync()
+                    }
+                }) {
+                    Text("Start")
+                }
+            }
+            Text(someText)
         }
+        .padding()
+    }
+    
+    func sleepAsync() async -> Void {
+        test_sleep(5000)
+        someText = "AFTER"
     }
 }
 

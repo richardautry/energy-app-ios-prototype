@@ -16,15 +16,24 @@ struct ContentView: View {
     let rustGreetings = RustGreetings()
     @State private var eiaData: [EIAData] = []
     @State var allFullDevices: [FullDevice] = []
+    @State var textValue: String = "Before"
     
     var body: some View {
         VStack {
             Text("SmartEn")
+            getTextView()
             // dataView()
             getDeviceDataView()
         }
         .onAppear {
             getFullDevices()
+        }
+    }
+    
+    func getTextView() -> some View {
+        return Text(textValue).task {
+            sleep(4)
+            textValue = "After"
         }
     }
     
