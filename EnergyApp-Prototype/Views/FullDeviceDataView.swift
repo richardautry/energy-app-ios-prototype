@@ -39,7 +39,7 @@ struct FullDeviceDataView: View {
                 }
             }
             Spacer()
-            FullDeviceAutomationsView()
+            FullDeviceAutomationsView(fullDevice: fullDevice)
         }
         .padding()
         .onAppear {

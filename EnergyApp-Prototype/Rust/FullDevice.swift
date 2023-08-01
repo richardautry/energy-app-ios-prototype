@@ -45,6 +45,10 @@ class FullDevice: RustObject {
     func switchOn() -> Bool {
         return full_device_switch_on(raw)
     }
+    
+    func turnOffAfter(length_ms: Int32) -> Bool {
+        return turn_off_after(length_ms, raw)
+    }
 }
 
 class FullDeviceMock: FullDevice {

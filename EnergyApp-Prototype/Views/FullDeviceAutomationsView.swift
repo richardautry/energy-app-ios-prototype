@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FullDeviceAutomationsView: View {
     @State private var someText: String = "BEFORE"
+    var fullDevice: FullDevice
     var body: some View {
         VStack(alignment: .leading) {
             Text("Full Device Automations")
@@ -30,13 +31,13 @@ struct FullDeviceAutomationsView: View {
     }
     
     func sleepAsync() async -> Void {
-        test_sleep(5000)
+        fullDevice.turnOffAfter(length_ms: 5000)
         someText = "AFTER"
     }
 }
 
 struct FullDeviceAutomationsView_Previews: PreviewProvider {
     static var previews: some View {
-        FullDeviceAutomationsView()
+        FullDeviceAutomationsView(fullDevice: FullDeviceMock.sampleData[0])
     }
 }
