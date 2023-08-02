@@ -14,9 +14,12 @@ struct FullDeviceDataView: View {
         VStack(alignment: .leading) {
             Text(fullDevice.alias)
                 .font(.headline)
+            NavigationLink(destination: FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn)) {
+                Text("\(fullDevice.addr)")
+            }
             Spacer()
             HStack {
-                Label("\(fullDevice.addr)", systemImage: getBoltImage())
+                Label("", systemImage: getBoltImage())
                 Spacer()
                 Button(action: {
                     var result: Bool = false
@@ -37,11 +40,13 @@ struct FullDeviceDataView: View {
                         Text("Off")
                     }
                 }
+                .buttonStyle(BorderedButtonStyle())
             }
-            Spacer()
-            FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn)
+//            HStack {
+//                FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn)
+//            }
+            
         }
-        .padding()
         .onAppear {
             isOn = fullDevice.is_on
         }

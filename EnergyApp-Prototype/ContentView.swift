@@ -52,10 +52,9 @@ struct ContentView: View {
     }
     
     func getDeviceDataView() -> some View {
-        return VStack {
+        return NavigationStack {
             List($allFullDevices) { fullDevice in
                 FullDeviceDataView(fullDevice: fullDevice)
-                    .padding()
             }
             .refreshable {
                 getFullDevices()
