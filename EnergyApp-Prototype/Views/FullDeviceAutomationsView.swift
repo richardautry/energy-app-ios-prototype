@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FullDeviceAutomationsView: View {
     @State private var someText: String = "BEFORE"
-    var fullDevice: FullDevice
+    @Binding var fullDevice: FullDevice
+    @Binding var isOn: Bool
     var body: some View {
         VStack(alignment: .leading) {
             Text("Full Device Automations")
@@ -31,13 +32,15 @@ struct FullDeviceAutomationsView: View {
     }
     
     func sleepAsync() async -> Void {
+        // TODO: Add binding to FullDevice to update value after automation runs
         fullDevice.turnOffAfter(length_ms: 5000)
+        isOn = fullDevice.is_on
         someText = "AFTER"
     }
 }
 
 struct FullDeviceAutomationsView_Previews: PreviewProvider {
     static var previews: some View {
-        FullDeviceAutomationsView(fullDevice: FullDeviceMock.sampleData[0])
+        FullDeviceAutomationsView(fullDevice: .constant(FullDeviceMock.sampleData[0]), isOn: .constant(false))
     }
 }
