@@ -6,36 +6,62 @@
 //
 
 import SwiftUI
+import Combine
 
 struct FullDeviceAutomationsView: View {
     @State private var someText: String = "BEFORE"
     @Binding var fullDevice: FullDevice
     @Binding var isOn: Bool
+    @State private var hours: String = "0"
+    @State private var numHours: Int32 = 0
+    @State private var progressMS: Int32 = 0
     var body: some View {
-        VStack(alignment: .leading) {
+        List {
             Text("Full Device Automations")
-            Spacer()
             HStack {
-                Label("Timer", systemImage: "clock")
+                Label("Turn Off After", systemImage: "clock")
                 Spacer()
                 Button(action: {
                     Task {
-                        await sleepAsync()
+                        // TODO: Will need to be able to query Rust state for current timer progress for better accuracy here
+                        progressMS = hoursToMs()
+                        await sleepAsync(lengthMs: progressMS)
                     }
                 }) {
-                    Text("Start")
+                    Text("Test")
                 }
             }
+            HStack {
+                Label("Hours", systemImage: "clock")
+                Spacer()
+                TextField("Hour(s)", text: $hours)
+                    .keyboardType(.numberPad)
+                    .onReceive(Just(hours)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue && newValue.count < 3 {
+                            self.hours = filtered
+                        }
+                    }
+                    .fixedSize()
+            }
             Text(someText)
+            Section {
+                ProgressView(value: Double(progressMS))
+            }
         }
         .padding()
     }
     
-    func sleepAsync() async -> Void {
+    func sleepAsync(lengthMs: Int32) async -> Void {
         // TODO: Add binding to FullDevice to update value after automation runs
-        fullDevice.turnOffAfter(length_ms: 5000)
+        fullDevice.turnOffAfter(length_ms: lengthMs)
         isOn = fullDevice.is_on
         someText = "AFTER"
+    }
+    
+    func hoursToMs() -> Int32 {
+        let numHours = Int32(hours)!
+        return numHours * 60 * 60 * 1000
     }
 }
 
