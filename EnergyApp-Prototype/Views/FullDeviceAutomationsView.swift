@@ -9,13 +9,15 @@ import SwiftUI
 import Combine
 
 struct FullDeviceAutomationsView: View {
-    @State private var someText: String = "BEFORE"
     @Binding var fullDevice: FullDevice
     @Binding var isOn: Bool
     @State private var hours: String = "0"
-    @State private var numHours: Int32 = 0
-    @State private var progressMS: UInt32 = 0
+    @State private var numHours: Double = 0
+    @State private var numMinutes: Double = 0
+    @State private var totalSecs: Int = 1
+    @State private var progressSecs: Int = 0
     @State private var timer: Timer = Timer()
+    @State private var minutesRemaining: Int = 0
     var body: some View {
         List {
             Text("Full Device Automations")
@@ -24,61 +26,56 @@ struct FullDeviceAutomationsView: View {
                 Spacer()
                 Button(action: {
                     Task {
-                        // TODO: Will need to be able to query Rust state for current timer progress for better accuracy here
-                        // progressMS = hoursToMs()
-                        await sleepAsync(lengthMs: 5000)
-                        // progressMS = start_timer_test(5000) * 1000
-//                        print("progressMS: \(progressMS)")
+                        await sleepAsync()
                     }
                 }) {
                     Text("Test")
                 }
             }
             HStack {
-                Label("Hours", systemImage: "clock")
+                Label("", systemImage: "clock")
                 Spacer()
-                TextField("Hour(s)", text: $hours)
-                    .keyboardType(.numberPad)
-                    .onReceive(Just(hours)) { newValue in
-                        let filtered = newValue.filter { "0123456789".contains($0) }
-                        if filtered != newValue && newValue.count < 3 {
-                            self.hours = filtered
-                        }
-                    }
-                    .fixedSize()
+                Slider(value: $numHours, in: 0...12, step: 1) {
+                    Text("Length")
+                }
+                Text("\(Int(numHours)) hr(s)")
+                    .accessibilityHidden(true)
             }
-            Text(someText)
+            HStack {
+                Label("", systemImage: "clock")
+                Spacer()
+                Slider(value: $numMinutes, in: 0...60, step: 1) {
+                    Text("Length")
+                }
+                Text("\(Int(numMinutes)) min(s)")
+                    .accessibilityHidden(true)
+            }
+            Text("\(minutesRemaining) minutes remaining")
             Section {
-                ProgressView(value: Double(progressMS) / Double(5000))
+                ProgressView(value: Double(progressSecs) / Double(totalSecs))
             }
         }
         .padding()
     }
     
-    func sleepAsync(lengthMs: Int32) async -> Void {
-        // TODO: Add binding to FullDevice to update value after automation runs
-//        fullDevice.turnOffAfter(length_ms: lengthMs)
-//        isOn = fullDevice.is_on
-//        someText = "AFTER"
-        // start_timer(lengthMs, timer.intoRaw())
-        // await pollSeconds()
-        // start_timer_test(5000, &progressMS)
-        progressMS = 0
-        for _ in 1...5 {
+    func sleepAsync() async -> Void {
+        // TODO: Use Timer here properly as in Scrum example
+        progressSecs = 0
+        totalSecs = Int(hoursToSecs(hours: numHours)) + Int(minutesToSecs(minutes: numMinutes))
+        let startDate = Date()
+        while progressSecs <= totalSecs {
             sleep(1)
-            progressMS += 1000
+            progressSecs = Int(Date().timeIntervalSince1970 - startDate.timeIntervalSince1970)
+            minutesRemaining = (totalSecs - progressSecs) / 60
         }
     }
     
-    func pollSeconds() async -> Void {
-        while progressMS < 5000 {
-            progressMS = timer.seconds
-        }
+    func hoursToSecs(hours: Double) -> Double {
+        return hours * 60 * 60
     }
     
-    func hoursToMs() -> Int32 {
-        let numHours = Int32(hours)!
-        return numHours * 60 * 60 * 1000
+    func minutesToSecs(minutes: Double) -> Double {
+        return minutes * 60
     }
 }
 
