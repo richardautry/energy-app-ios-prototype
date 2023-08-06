@@ -26,6 +26,7 @@
 		797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */; };
 		797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429DE2A69BCD600EB7D40 /* FullDevice.swift */; };
 		797429E12A7281DC00EB7D40 /* FullDeviceAutomationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797429E02A7281DC00EB7D40 /* FullDeviceAutomationsView.swift */; };
+		7976A8B52A7EF627008F5FAA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A8B42A7EF627008F5FAA /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		797429DC2A69851700EB7D40 /* FullDeviceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDeviceDataView.swift; sourceTree = "<group>"; };
 		797429DE2A69BCD600EB7D40 /* FullDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDevice.swift; sourceTree = "<group>"; };
 		797429E02A7281DC00EB7D40 /* FullDeviceAutomationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDeviceAutomationsView.swift; sourceTree = "<group>"; };
+		7976A8B42A7EF627008F5FAA /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				797429D82A69465B00EB7D40 /* RustObject.swift */,
 				797429DA2A69470100EB7D40 /* DeviceData.swift */,
 				797429DE2A69BCD600EB7D40 /* FullDevice.swift */,
+				7976A8B42A7EF627008F5FAA /* Timer.swift */,
 			);
 			path = Rust;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				797429E12A7281DC00EB7D40 /* FullDeviceAutomationsView.swift in Sources */,
 				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
 				797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */,
+				7976A8B52A7EF627008F5FAA /* Timer.swift in Sources */,
 				797429D92A69465B00EB7D40 /* RustObject.swift in Sources */,
 				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,

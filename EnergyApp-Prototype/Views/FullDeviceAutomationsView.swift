@@ -14,7 +14,8 @@ struct FullDeviceAutomationsView: View {
     @Binding var isOn: Bool
     @State private var hours: String = "0"
     @State private var numHours: Int32 = 0
-    @State private var progressMS: Int32 = 0
+    @State private var progressMS: UInt32 = 0
+    @State private var timer: Timer = Timer()
     var body: some View {
         List {
             Text("Full Device Automations")
@@ -24,8 +25,10 @@ struct FullDeviceAutomationsView: View {
                 Button(action: {
                     Task {
                         // TODO: Will need to be able to query Rust state for current timer progress for better accuracy here
-                        progressMS = hoursToMs()
-                        await sleepAsync(lengthMs: progressMS)
+                        // progressMS = hoursToMs()
+                        await sleepAsync(lengthMs: 5000)
+                        // progressMS = start_timer_test(5000) * 1000
+//                        print("progressMS: \(progressMS)")
                     }
                 }) {
                     Text("Test")
@@ -46,7 +49,7 @@ struct FullDeviceAutomationsView: View {
             }
             Text(someText)
             Section {
-                ProgressView(value: Double(progressMS))
+                ProgressView(value: Double(progressMS) / Double(5000))
             }
         }
         .padding()
@@ -54,9 +57,23 @@ struct FullDeviceAutomationsView: View {
     
     func sleepAsync(lengthMs: Int32) async -> Void {
         // TODO: Add binding to FullDevice to update value after automation runs
-        fullDevice.turnOffAfter(length_ms: lengthMs)
-        isOn = fullDevice.is_on
-        someText = "AFTER"
+//        fullDevice.turnOffAfter(length_ms: lengthMs)
+//        isOn = fullDevice.is_on
+//        someText = "AFTER"
+        // start_timer(lengthMs, timer.intoRaw())
+        // await pollSeconds()
+        // start_timer_test(5000, &progressMS)
+        progressMS = 0
+        for _ in 1...5 {
+            sleep(1)
+            progressMS += 1000
+        }
+    }
+    
+    func pollSeconds() async -> Void {
+        while progressMS < 5000 {
+            progressMS = timer.seconds
+        }
     }
     
     func hoursToMs() -> Int32 {
