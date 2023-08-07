@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791C08B32A8106880082C1B0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C08B22A8106880082C1B0 /* Timer.swift */; };
 		793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */; };
 		793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AF2A56CF5D0068DFFC /* ContentView.swift */; };
 		793483B22A56CF620068DFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793483B12A56CF620068DFFC /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		791C08B22A8106880082C1B0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnergyApp-Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeApp.swift; sourceTree = "<group>"; };
 		793483AF2A56CF5D0068DFFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				793483DC2A5C16000068DFFC /* EIAData.swift */,
+				791C08B22A8106880082C1B0 /* Timer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				79467C4D2A62F55D00CBCF1E /* RustGreetings.swift in Sources */,
 				797429DD2A69851700EB7D40 /* FullDeviceDataView.swift in Sources */,
 				7976A8B52A7EF627008F5FAA /* Timer.swift in Sources */,
+				791C08B32A8106880082C1B0 /* Timer.swift in Sources */,
 				797429D92A69465B00EB7D40 /* RustObject.swift in Sources */,
 				793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */,
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,

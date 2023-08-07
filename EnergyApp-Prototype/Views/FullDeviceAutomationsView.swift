@@ -58,6 +58,8 @@ struct FullDeviceAutomationsView: View {
         .padding()
     }
     
+    // TODO: Make this an automation that always tracks in background and isn't
+    // tied to a view
     func sleepAsync() async -> Void {
         // TODO: Use Timer here properly as in Scrum example
         progressSecs = 0
