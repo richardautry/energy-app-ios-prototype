@@ -12,7 +12,8 @@ struct FullDeviceAutomationsView: View {
     @Binding var fullDevice: FullDevice
     @Binding var isOn: Bool
     @State private var hours: String = "0"
-    @Binding var simpleTimer: SimpleTimer
+    @State private var numHours: Double = 0
+    @StateObject var simpleTimer: SimpleTimer = SimpleTimer()
     
     // TODO: Wire up simple timer and hour/min values correctly
     
@@ -48,7 +49,7 @@ struct FullDeviceAutomationsView: View {
                 Text("\(Int(simpleTimer.numMinutes)) min(s)")
                     .accessibilityHidden(true)
             }
-            Text("\(simpleTimer.minutesRemaining) minutes remaining")
+            Text("~\(simpleTimer.minutesRemaining) minutes remaining")
             Section {
                 ProgressView(value: Double(simpleTimer.progressSecs) / Double(simpleTimer.totalSecs))
             }
@@ -63,8 +64,8 @@ struct FullDeviceAutomationsView_Previews: PreviewProvider {
     static var previews: some View {
         FullDeviceAutomationsView(
             fullDevice: .constant(FullDeviceMock.sampleData[0]),
-            isOn: .constant(false),
-            simpleTimer: .constant(SimpleTimer.sampleData[0])
+            isOn: .constant(false)
+            // simpleTimer: .constant(SimpleTimer.sampleData[0])
         )
     }
 }

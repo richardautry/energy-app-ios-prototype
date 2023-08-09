@@ -9,7 +9,7 @@ import Foundation
 
 // TODO: Create a timer class that will track time independent of views and can be pollable in multiple places
 // i.e. need sto be a background task
-class SimpleTimer {
+class SimpleTimer: ObservableObject {
     @Published var numHours: Double = 0
     @Published var numMinutes: Double = 0
     @Published var totalSecs: Int = 1
@@ -18,13 +18,19 @@ class SimpleTimer {
     
     func sleepAsync() async -> Void {
         // TODO: Use Timer here properly as in Scrum example
-        progressSecs = 0
-        totalSecs = Int(hoursToSecs(hours: numHours)) + Int(minutesToSecs(minutes: numMinutes))
+        DispatchQueue.main.async {
+            self.progressSecs = 0
+            self.totalSecs = Int(self.hoursToSecs(hours: self.numHours)) + Int(self.minutesToSecs(minutes: self.numMinutes))
+        }
         let startDate = Date()
         while progressSecs <= totalSecs {
             sleep(1)
-            progressSecs = Int(Date().timeIntervalSince1970 - startDate.timeIntervalSince1970)
-            minutesRemaining = (totalSecs - progressSecs) / 60
+            DispatchQueue.main.async {
+                self.progressSecs = Int(Date().timeIntervalSince1970 - startDate.timeIntervalSince1970)
+            }
+            DispatchQueue.main.async {
+                self.minutesRemaining = ((self.totalSecs - self.progressSecs) / 60) + 1
+            }
         }
     }
     

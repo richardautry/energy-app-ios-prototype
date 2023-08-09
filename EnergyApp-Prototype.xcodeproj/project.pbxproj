@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		791C08B32A8106880082C1B0 /* SimpleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C08B22A8106880082C1B0 /* SimpleTimer.swift */; };
+		791C08B52A83A8550082C1B0 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C08B42A83A8550082C1B0 /* BackgroundTask.swift */; };
 		793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */; };
 		793483B02A56CF5D0068DFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AF2A56CF5D0068DFFC /* ContentView.swift */; };
 		793483B22A56CF620068DFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793483B12A56CF620068DFFC /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		791C08B22A8106880082C1B0 /* SimpleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimer.swift; sourceTree = "<group>"; };
+		791C08B42A83A8550082C1B0 /* BackgroundTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnergyApp-Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyApp_PrototypeApp.swift; sourceTree = "<group>"; };
 		793483AF2A56CF5D0068DFFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				793483DC2A5C16000068DFFC /* EIAData.swift */,
 				791C08B22A8106880082C1B0 /* SimpleTimer.swift */,
+				791C08B42A83A8550082C1B0 /* BackgroundTask.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				79467C402A5EBF7E00CBCF1E /* Configuration.swift in Sources */,
 				79467C3C2A5CE26B00CBCF1E /* DemandDataView.swift in Sources */,
 				793483DD2A5C16000068DFFC /* EIAData.swift in Sources */,
+				791C08B52A83A8550082C1B0 /* BackgroundTask.swift in Sources */,
 				793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */,
 				797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */,
 				797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */,

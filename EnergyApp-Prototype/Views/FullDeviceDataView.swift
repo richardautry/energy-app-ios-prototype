@@ -9,14 +9,13 @@ import SwiftUI
 
 struct FullDeviceDataView: View {
     @Binding var fullDevice: FullDevice
-    @State var simpleTimer: SimpleTimer = SimpleTimer()
     @State private var isOn: Bool = false
     var body: some View {
         VStack(alignment: .leading) {
             Text(fullDevice.alias)
                 .font(.headline)
-            NavigationLink(destination: FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn,
-                simpleTimer: $simpleTimer)) {
+            NavigationLink(destination: FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn
+            )) {
                 Text("\(fullDevice.addr)")
             }
             Spacer()
@@ -44,10 +43,6 @@ struct FullDeviceDataView: View {
                 }
                 .buttonStyle(BorderedButtonStyle())
             }
-//            HStack {
-//                FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn)
-//            }
-            
         }
         .onAppear {
             isOn = fullDevice.is_on
