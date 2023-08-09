@@ -9,12 +9,14 @@ import SwiftUI
 
 struct FullDeviceDataView: View {
     @Binding var fullDevice: FullDevice
+    @State var simpleTimer: SimpleTimer = SimpleTimer()
     @State private var isOn: Bool = false
     var body: some View {
         VStack(alignment: .leading) {
             Text(fullDevice.alias)
                 .font(.headline)
-            NavigationLink(destination: FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn)) {
+            NavigationLink(destination: FullDeviceAutomationsView(fullDevice: $fullDevice, isOn: $isOn,
+                simpleTimer: $simpleTimer)) {
                 Text("\(fullDevice.addr)")
             }
             Spacer()
@@ -63,7 +65,8 @@ struct FullDeviceDataView: View {
 
 struct DeviceDataView_Previews: PreviewProvider {
     static var previews: some View {
-        FullDeviceDataView(fullDevice: .constant(FullDeviceMock.sampleData[0]))
+        FullDeviceDataView(fullDevice: .constant(FullDeviceMock.sampleData[0])
+        )
     }
 }
 

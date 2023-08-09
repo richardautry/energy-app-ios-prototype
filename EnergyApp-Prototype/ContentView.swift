@@ -54,7 +54,9 @@ struct ContentView: View {
     func getDeviceDataView() -> some View {
         return NavigationStack {
             List($allFullDevices) { fullDevice in
-                FullDeviceDataView(fullDevice: fullDevice)
+                FullDeviceDataView(
+                    fullDevice: fullDevice
+                )
             }
             .refreshable {
                 getFullDevices()
