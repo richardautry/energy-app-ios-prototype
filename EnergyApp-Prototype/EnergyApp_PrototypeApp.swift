@@ -17,6 +17,7 @@ struct EnergyApp_PrototypeApp: App {
         .backgroundTask(.appRefresh("TurnOffDevice")) {
             //scheduleAppRefresh()
             // TODO: Add turn_off function here
+            // TODO: How to pass my device instance and call its function here
         }
     }
         
