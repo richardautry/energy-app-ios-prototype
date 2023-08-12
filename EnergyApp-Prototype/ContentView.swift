@@ -24,6 +24,7 @@ struct ContentView: View {
             getTextView()
             // dataView()
             getDeviceDataView()
+            getScheduleAppRefreshView()
         }
         .onAppear {
             getFullDevices()
@@ -132,6 +133,15 @@ struct ContentView: View {
             print("\(error)")
         }
         return return_data
+    }
+    
+    func getScheduleAppRefreshView() -> some View {
+        Button(action: {
+            scheduleAppRefresh()
+        }) {
+            Text("APP REFRESH TEST")
+        }
+        .buttonStyle(BorderedButtonStyle())
     }
 }
 
