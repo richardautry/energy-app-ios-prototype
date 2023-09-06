@@ -14,23 +14,18 @@ struct EnergyApp_PrototypeApp: App {
         WindowGroup {
             ContentView()
         }
-        .backgroundTask(
-            // TOOD: Not only is this not working, but background tasks in general don't work as expected.
-            // The OS can decide to not run the task depending on user interaction with the app
-            // This is not the way forward for now.
-            .appRefresh("TurnOffDevice")) {
+        .backgroundTask(.appRefresh("TurnOffDevice")) {
             // scheduleAppRefresh()
-            print("THIS IS THE BACKGROUND TASK FIRING")
-            // TODO: Add turn_off function here
-            // TODO: How to pass my device instance and call its function here
+            someFunc()
         }
     }
     
-    init() {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "TurnOffDevice", using: nil, launchHandler: {task in
-            print("THIS IS A BACKGROUND TASK SCHEDULER FIRIING")
-        })
-    }
+//    init() {
+//        print("init called")
+//        BGTaskScheduler.shared.register(forTaskWithIdentifier: "TurnOffDevice", using: nil, launchHandler: {task in
+//            someFunc()
+//        })
+//    }
     
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        let feedVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? FeedTableViewController
@@ -56,14 +51,24 @@ struct EnergyApp_PrototypeApp: App {
 func scheduleAppRefresh() {
     let today = Date()
     print("\(today)")
-    let nextDate = Calendar.current.date(byAdding: .second, value: 30, to: today)
+    let nextDate = Calendar.current.date(byAdding: .second, value: 5, to: today)
     print("Next Date:\(nextDate!)")
 //    let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)!
 //    let noonComponent = DateComponents(hour: 12)
 //    let noon = Calendar.current.date(byAdding: noonComponent, to: tomorrow)
     
     let request = BGAppRefreshTaskRequest(identifier: "TurnOffDevice")
-    request.earliestBeginDate = nextDate
-    try? BGTaskScheduler.shared.submit(request)
-    print("BGTASK SCHEDULED")
+    request.earliestBeginDate = Date(timeIntervalSinceNow: 0)
+    do {
+        try BGTaskScheduler.shared.submit(request)
+        print("BGTASK SCHEDULED")
+    } catch {
+        print("COULD NOT SCHEDULE")
+    }
+//    try? BGTaskScheduler.shared.submit(request)
+    
+}
+
+func someFunc() {
+    print("This is firing now")
 }
