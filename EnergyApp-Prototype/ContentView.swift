@@ -28,6 +28,10 @@ struct ContentView: View {
         }
         .onAppear {
             getFullDevices()
+            hitRustServer { (some_string) in
+                print(some_string)
+                
+            }
         }
     }
     

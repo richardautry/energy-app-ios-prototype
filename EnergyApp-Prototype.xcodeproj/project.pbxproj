@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		790D8AA32AA810C20099F952 /* RustServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D8AA22AA810C20099F952 /* RustServer.swift */; };
+		790D8AA32AA810C20099F952 /* RustServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D8AA22AA810C20099F952 /* RustServerClient.swift */; };
 		791C08B32A8106880082C1B0 /* SimpleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C08B22A8106880082C1B0 /* SimpleTimer.swift */; };
 		791C08B52A83A8550082C1B0 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C08B42A83A8550082C1B0 /* BackgroundTask.swift */; };
 		793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793483AD2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift */; };
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		790D8AA22AA810C20099F952 /* RustServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustServer.swift; sourceTree = "<group>"; };
+		790D8AA22AA810C20099F952 /* RustServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustServerClient.swift; sourceTree = "<group>"; };
 		791C08B22A8106880082C1B0 /* SimpleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimer.swift; sourceTree = "<group>"; };
 		791C08B42A83A8550082C1B0 /* BackgroundTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		793483AA2A56CF5D0068DFFC /* EnergyApp-Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnergyApp-Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +182,7 @@
 				793483DC2A5C16000068DFFC /* EIAData.swift */,
 				791C08B22A8106880082C1B0 /* SimpleTimer.swift */,
 				791C08B42A83A8550082C1B0 /* BackgroundTask.swift */,
-				790D8AA22AA810C20099F952 /* RustServer.swift */,
+				790D8AA22AA810C20099F952 /* RustServerClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 				791C08B52A83A8550082C1B0 /* BackgroundTask.swift in Sources */,
 				793483AE2A56CF5D0068DFFC /* EnergyApp_PrototypeApp.swift in Sources */,
 				797429DB2A69470100EB7D40 /* DeviceData.swift in Sources */,
-				790D8AA32AA810C20099F952 /* RustServer.swift in Sources */,
+				790D8AA32AA810C20099F952 /* RustServerClient.swift in Sources */,
 				797429DF2A69BCD600EB7D40 /* FullDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
